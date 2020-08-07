@@ -12,11 +12,12 @@ def reconstruct_trip(tickets, length):
     # Your code here
     routeHash = {}
     route = [None] * length
-    val = routeHash["NONE"]
     for ticket in tickets:
         if ticket not in routeHash:
             routeHash[ticket.source]=ticket.destination
             
+            
+    val = routeHash["NONE"]
     for i in range(0,length):
         route[i] = val
         val = routeHash[val]
